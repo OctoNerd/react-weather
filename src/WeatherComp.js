@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+var cityWeather = [];
+var currentCity = 0;
+
 class WeatherComp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            weather: '',
+            temp: 0,
+            humidity: 0,
+            wind: 0
         }
     }
 
@@ -16,10 +22,20 @@ class WeatherComp extends Component {
 
         fetch(rootUrl + place + apiUrl)
             .then(function(response) {
-            return response.json()
+                return response.json()
             }).then(function(data) {
-            self.setState({ data }, () => console.log(self.state));
+                cityWeather[currentCity] = data;
+                self.updateData(data);
             })
+    }
+
+    updateData() {
+        this.setState({
+            weather: cityWeather[currentCity].weather[0].id,
+            temp: Math.round(cityWeather[currentCity].main.temp - 273.15),
+            humidity: Math.round(cityWeather[currentCity].main.humidity),
+            wind: cityWeather[currentCity].wind.speed
+        })
     }
 
     componentDidMount() {
@@ -27,11 +43,13 @@ class WeatherComp extends Component {
     }
     
     render() {
-    return (
-    <div>
-    <h1>Testing</h1>
-    </div>
-    );
+        var weatherClass = "wi wi-owm-" + this.state.weather;
+        return (
+            <div>
+                <i className={weatherClass} ></i>
+                <h1>Testing</h1>
+            </div>
+        );
     }
 }
 
