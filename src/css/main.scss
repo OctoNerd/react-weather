@@ -1,0 +1,93 @@
+//Colors
+$very-warm: #FF8500;
+$warm: #ffc600;
+$neutral: #aabebf;
+$cold: #06799F;
+$very-cold: #233884;
+
+//Fonts
+$default-font: league-gothic, sans-serif;
+
+
+.weather-widget {
+    width: 100%;
+    font-family: $default-font;
+    font-weight: 100;
+    color: white;
+}
+.very-warm {
+    background: $very-warm;
+}
+.warm {
+    background: $warm;
+}
+.neutral {
+    background: $neutral;
+}
+.cold {
+    background: $cold;
+}
+.very-cold {
+    background: $very-cold;
+}
+
+.cityname {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    font-size: 4em;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.weather {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px white solid;
+
+    .wi {
+        font-size: 16em;
+    }
+}
+
+.weather-details {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.temp {
+
+    &-number {
+        font-size: 15em;
+    }
+
+    .wi {
+        font-size: 15em;
+    }
+}
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.humidity {
+    font-size: 5em;
+}
+
+.wind {
+    font-size: 5em;
+
+    .wi {
+        margin-right: 10px;
+    }
+}
+
+
+
