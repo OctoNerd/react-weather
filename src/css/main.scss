@@ -42,9 +42,10 @@ $default-font: league-gothic, sans-serif;
 
 .weather {
     height: 300px;
-    width: 100%;
+    width: 600px;
     text-align: center;
     border-bottom: 2px white solid;
+    margin: 0 auto;
 
     .wi {
         font-size: 16em;
