@@ -17,7 +17,7 @@ class WeatherComp extends Component {
     }
 
     fetchData() {
-        var rootUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
+        var rootUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
         var apiUrl = '&appid=370e5a15bcbb7093fad4ad07080275c3'; //your personal api key here
         var place = 'Portland';
         var self = this;
