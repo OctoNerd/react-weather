@@ -8,7 +8,7 @@ $very-cold: #233884;
 //Fonts
 $default-font: league-gothic, sans-serif;
 
-
+//Dom elements
 .weather-widget {
     width: 100%;
     font-family: $default-font;
@@ -42,7 +42,7 @@ $default-font: league-gothic, sans-serif;
 
 .weather {
     height: 300px;
-    width: 600px;
+    max-width: 600px;
     text-align: center;
     border-bottom: 2px white solid;
     margin: 0 auto;
@@ -53,7 +53,7 @@ $default-font: league-gothic, sans-serif;
 }
 
 .weather-details {
-    width: 600px;
+    max-width: 600px;
     height: 300px;
     display: flex;
     justify-content: space-around;
@@ -68,7 +68,8 @@ $default-font: league-gothic, sans-serif;
     }
 
     .wi {
-        font-size: 15em;
+        font-size: 13em;
+        vertical-align: top;
     }
 }
 .wrap {
@@ -90,5 +91,43 @@ $default-font: league-gothic, sans-serif;
     }
 }
 
+// media queries
 
+@media (max-width: 500px) {
+    .weather {
+        max-width: 400px;
 
+        .wi {
+            font-size: 12em;
+            margin-top: 30px;
+        }
+    }
+
+    .weather-details {
+        max-width: 400px;
+    }
+
+    .temp {
+
+        &-number {
+            font-size: 10em;
+        }
+    
+        .wi {
+            font-size: 10em;
+            vertical-align: top;
+        }
+    }
+
+    .wrap {
+        height: 130px;
+    }
+
+    .humidity {
+        font-size: 3em;
+    }
+    
+    .wind {
+        font-size: 3em;
+    }
+}
